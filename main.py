@@ -1,5 +1,5 @@
 import os
-
+from cargar_archivo import leer_archivo
 
 def datos_del_estudiante():
     print("\n==========================================")
@@ -25,6 +25,8 @@ def menu_principal():
                 if opcion == 1:
                     print("Ha marcado la opcion Cargar Archivo")
                     print("==========================================\n")
+                    leer_archivo()
+
                 
                 elif opcion == 2:
                     print("Ha marcado la opcion Graficar Ruta")
