@@ -1,0 +1,1 @@
+<nombre>ruta_central2</nombre><peso>4</peso><inicio>estacionzona6</inicio><fin>EstacionZona2</fin>$
