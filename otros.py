@@ -16,6 +16,7 @@ class Estacion_o:
 def leer_archivo(path):
     pattern1 = r"</ruta>"
     pattern2 = r"</estacion>"
+    pattern3 = r">[^\s]{1,3}<"
 
     with open(path, 'r', encoding='utf-8') as f:
         lineas = f.readlines()
@@ -23,6 +24,7 @@ def leer_archivo(path):
         for i in lineas:
             linea += i.replace("\n", "")
             linea = linea.replace(" ", "")
+            linea = re.sub(pattern3, "><", linea)
             linea = re.sub(pattern1, "</ruta> ", linea)
             linea = re.sub(pattern2, "</estacion> ", linea)
         return linea.split()
@@ -114,8 +116,6 @@ def Limpiar_Nombre(nombre_entrada):
 
     return nombre
 
-estaciones = Agrupar(leer_archivo("pa2.txt"))[2]
-estacion = estaciones[0]
 
 
 """ 

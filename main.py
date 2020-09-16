@@ -1,5 +1,6 @@
 import os
-from cargar_archivo import leer_archivo
+from cargar_archivo import carga_archivo
+from mapa import graficar_mapa
 
 def datos_del_estudiante():
     print("\n==========================================")
@@ -16,6 +17,7 @@ def opciones_del_menu():
 
 
 def menu_principal():
+    listas = []
     while True:
         opciones_del_menu() 
         try:
@@ -25,15 +27,16 @@ def menu_principal():
                 if opcion == 1:
                     print("Ha marcado la opcion Cargar Archivo")
                     print("==========================================\n")
-                    leer_archivo()
-
+                    listas = carga_archivo()
                 
                 elif opcion == 2:
                     print("Ha marcado la opcion Graficar Ruta")
                     print("==========================================\n")
+                        
                 elif opcion == 3:
                     print("Ha marcado la opcion Graficar Mapa")
                     print("==========================================\n")
+                    graficar_mapa(listas)
                 elif opcion == 4:
                     print("Saliendo...\n")
                     break
@@ -46,10 +49,7 @@ def menu_principal():
             print("\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
             print("/////Error -> ingrese datos nuevamente/////") 
             print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n")
-
-
     
-
 if __name__ == "__main__":
     datos_del_estudiante()
     try:

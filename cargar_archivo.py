@@ -1,35 +1,30 @@
 import re, os
+from otros import *
 
-def convertir_cadena(archivo):
-    with open(archivo, 'r') as f:
-        lineas = f.readlines()
-        linea = ""
-        for i in lineas:
-            linea += i.replace("\n", "")
-            linea = linea.replace(" ", "")
-        return linea
-
-
-
-def leer_archivo():
+def carga_archivo():
     ruta = input("Ingrese la ruta del archivo: ")
     if os.path.exists(ruta): 
         if re.search("\.txt", ruta):
-            f = open(ruta , "r")
             print("==========================================\n\n")
-            for linea in f:
-                if "\n" in linea:
-                    linea.replace("\n","")
-                else: 
-                    continue
-                print(linea)
-                
-        
-            print("------------------------------------------------------\n\n")
+
+            lista_texto = leer_archivo(ruta)
+            lista_etiquetas = Agrupar(lista_texto)
+            Rutas = []
+            Estaciones = []
+            #Rutas
+            
+            for i in lista_etiquetas[0]:
+                Rutas.append(Limpiar_Ruta(i))
+            #Estaciones
+            for i in lista_etiquetas[1]:
+                Estaciones.append(Limpiar_Estacion(i))
+            #Nombre
+            nombre = Limpiar_Nombre(lista_etiquetas[2][0])
+            
+            lista_limpia = [Rutas, Estaciones, nombre]
             var = input("Ingrese Enter para continuar: ")
             print("Regresando a menu principal...")
-            print("\n\n------------------------------------------------------\n\n")
-            f.close()
+            return lista_limpia
         else:
             print("\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
             print("////Error -> Unicamente archivos .txt ////")
@@ -39,6 +34,3 @@ def leer_archivo():
         print("\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
         print("/////  Error -> Ruta no encontrada  /////")
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n")
-
-
-
