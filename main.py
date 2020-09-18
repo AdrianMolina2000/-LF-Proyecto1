@@ -1,6 +1,6 @@
 import os
 from cargar_archivo import carga_archivo
-from mapa import graficar_mapa
+from mapa import graficar_mapa, graficar_ruta, graficar_ruta2
 
 def datos_del_estudiante():
     print("\n==========================================")
@@ -28,15 +28,18 @@ def menu_principal():
                     print("Ha marcado la opcion Cargar Archivo")
                     print("==========================================\n")
                     listas = carga_archivo()
-                
+                    
                 elif opcion == 2:
                     print("Ha marcado la opcion Graficar Ruta")
                     print("==========================================\n")
-                        
+                    graficar_ruta(listas)
+                    graficar_ruta2(listas)
+                            
                 elif opcion == 3:
                     print("Ha marcado la opcion Graficar Mapa")
                     print("==========================================\n")
                     graficar_mapa(listas)
+
                 elif opcion == 4:
                     print("Saliendo...\n")
                     break
@@ -54,9 +57,9 @@ if __name__ == "__main__":
     datos_del_estudiante()
     try:
         menu_principal()
-    except:
+    except Exception as e:
         print("\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
         print("///// Error -> Error -> Error ->  Error /////") 
+        print(e)
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n")
-        
         menu_principal()

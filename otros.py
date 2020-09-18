@@ -16,7 +16,7 @@ class Estacion_o:
 def leer_archivo(path):
     pattern1 = r"</ruta>"
     pattern2 = r"</estacion>"
-    pattern3 = r">[^\s]{1,3}<"
+    pattern3 = r">[^\s|^0-9]{1,3}<"
 
     with open(path, 'r', encoding='utf-8') as f:
         lineas = f.readlines()
@@ -115,7 +115,6 @@ def Limpiar_Nombre(nombre_entrada):
     nombre = nombre.replace("</nombre>", "")
 
     return nombre
-
 
 
 """ 

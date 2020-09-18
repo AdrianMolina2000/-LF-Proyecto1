@@ -1,0 +1,13 @@
+digraph Ruta2 {
+	node [color=black fillcolor=gray fixedsize=true height=1 shape=oval style=filled width=2]
+	EstacionZona6 -> EstacionZona2 [label="ruta_central2
+4" style=bold]
+	EstacionZona2 -> EstacionZona1 [label="rutaExpress
+0.7" style=bold]
+	EstacionZona1 -> EstacionZona5 [label="rutaJardines
+2" style=bold]
+	overlap=false
+	label=MapaCentral
+	fontsize=20
+	rankdir=LR
+}
