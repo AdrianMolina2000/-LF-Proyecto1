@@ -1,35 +1,35 @@
 digraph Mapa {
 	node [color=black fillcolor="#1A5AAF" fixedsize=true height=1 shape=oval style=filled width=2]
-	EstacionZona6 [label="EstacionZona6
+	estacionzona6 [label="EstacionZona6
 disponible"]
 	node [color=black fillcolor="#AF5B1A" fixedsize=true height=1 shape=oval style=filled width=2]
-	EstacionZona2 [label="EstacionZona2
+	estacionzona2 [label="EstacionZona2
 disponible"]
 	node [color=black fillcolor="#E52E22" fixedsize=true height=1 shape=oval style=filled width=2]
-	EstacionZona1 [label="EstacionZona1
+	estacionzona1 [label="EstacionZona1
 disponible"]
 	node [color=black fillcolor="#208E40" fixedsize=true height=1 shape=oval style=filled width=2]
-	EstacionZona5 [label="EstacionZona5
+	estacionzona5 [label="EstacionZona5
 disponible"]
 	node [color=black fillcolor="#AF5B1A" fixedsize=true height=1 shape=oval style=filled width=2]
-	EstacionZona4 [label="EstacionZona4
+	estacionzona4 [label="estacionzona4
 cerrada"]
-	EstacionZona1 -> EstacionZona6 [label="ruta_central
-2.5" style=dashed]
-	EstacionZona6 -> EstacionZona2 [label="ruta_central2
+	estacionzona1 -> estacionzona6 [label="ruta_central
+2.5" style=bold]
+	estacionzona6 -> estacionzona2 [label="ruta_central2
 4" style=bold]
-	EstacionZona6 -> EstacionZona1 [label="ruta2
+	estacionzona6 -> estacionzona1 [label="ruta2
 5" style=dashed]
-	EstacionZona2 -> EstacionZona1 [label="rutaExpress
+	estacionzona2 -> estacionzona1 [label="rutaExpress
 0.7" style=bold]
-	EstacionZona1 -> EstacionZona5 [label="rutaJardines
+	estacionzona1 -> estacionzona5 [label="rutaJardines
 2" style=bold]
-	EstacionZona6 -> EstacionZona4 [label="ruta4
+	estacionzona6 -> estacionzona4 [label="ruta4
 1.2" style=dashed]
-	EstacionZona4 -> EstacionZona5 [label="ruta_4_5
+	estacionzona4 -> estacionzona5 [label="ruta_4_5
 2" style=dashed]
-	EstacionZona2 -> EstacionZona5 [label="ruta_2_5
-3" style=dashed]
+	"”estacionzona2" -> estacionzona5 [label="ruta_2_5
+3" style=bold]
 	overlap=false
 	label=MapaCentral
 	fontsize=20

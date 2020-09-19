@@ -38,22 +38,22 @@ def graficar_mapa(lista):
     
     for i in lista_estaciones:
         t.attr('node', shape='oval', fixedsize='true', width="2",  height= "1", color="black",style= "filled", fillcolor=i.color)
-        t.node(i.nombre, label=i.nombre+'\n'+i.estado)
+        t.node(i.nombre.lower(), label=i.nombre+'\n'+i.estado)
 
     for i in lista_rutas:
 
         if esta_abierta(lista_estaciones, i.inicio):
             if esta_abierta(lista_estaciones, i.fin):
                 if es_mayor(lista_rutas, i, lista_estaciones):
-                    t.edge(tail_name=i.inicio, head_name=i.fin, style="dashed", label=i.nombre + '\n' + i.peso)
+                    t.edge(tail_name=i.inicio.lower(), head_name=i.fin.lower(), style="dashed", label=i.nombre + '\n' + i.peso)
 
                 else:
-                    t.edge(tail_name=i.inicio, head_name=i.fin, style = "bold", label=i.nombre + '\n' + i.peso)
+                    t.edge(tail_name=i.inicio.lower(), head_name=i.fin.lower(), style = "bold", label=i.nombre + '\n' + i.peso)
 
             else: 
-                t.edge(tail_name=i.inicio, head_name=i.fin, style="dashed", label=i.nombre + '\n' + i.peso)
+                t.edge(tail_name=i.inicio.lower(), head_name=i.fin.lower(), style="dashed", label=i.nombre + '\n' + i.peso)
         else: 
-            t.edge(tail_name=i.inicio, head_name=i.fin, style="dashed", label=i.nombre + '\n' + i.peso)
+            t.edge(tail_name=i.inicio.lower(), head_name=i.fin.lower(), style="dashed", label=i.nombre + '\n' + i.peso)
 
     #penwidth = "5"
     t.attr(overlap='false')
@@ -75,14 +75,14 @@ def graficar_ruta(lista):
     
     for i in lista_estaciones:
         t.attr('node', shape='oval', fixedsize='true', width="2",  height= "1", color="black",style= "filled", fillcolor=i.color)
-        t.node(i.nombre, label=i.nombre+'\n'+i.estado)
+        t.node(i.nombre.lower(), label=i.nombre+'\n'+i.estado)
 
     for i in lista_rutas:
 
         if esta_abierta(lista_estaciones, i.inicio):
             if esta_abierta(lista_estaciones, i.fin):
                 if es_mayor(lista_rutas, i, lista_estaciones) == False:
-                    t.edge(tail_name=i.inicio, head_name=i.fin, style = "bold", label=i.nombre + '\n' + i.peso)
+                    t.edge(tail_name=i.inicio.lower(), head_name=i.fin.lower(), style = "bold", label=i.nombre + '\n' + i.peso)
                     
     #penwidth = "5"
     t.attr(overlap='false')
@@ -110,7 +110,7 @@ def graficar_ruta2(lista):
         if esta_abierta(lista_estaciones, i.inicio):
             if esta_abierta(lista_estaciones, i.fin):
                 if es_mayor(lista_rutas, i, lista_estaciones) == False:
-                    t.edge(tail_name=i.inicio, head_name=i.fin, style = "bold", label=i.nombre + '\n' + i.peso)
+                    t.edge(tail_name=i.inicio.lower(), head_name=i.fin.lower(), style = "bold", label=i.nombre + '\n' + i.peso)
                     
     #penwidth = "5"
     t.attr(overlap='false')

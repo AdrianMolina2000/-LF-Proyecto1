@@ -1,0 +1,122 @@
+<ruta>
+   <nombre>
+   </nombre>
+   <peso>
+   </peso>
+   <inicio>
+   </inicio>
+   <fin>
+   </fin>
+</ruta>
+<estacion>
+   <nombre>
+   </nombre>
+   <estado>
+   </estado>
+   <color>
+   </color>
+</estacion>
+<estacion>
+   <color>
+   </color>
+   <nombre>
+   </nombre>
+   <estado>
+   </estado>
+</estacion>
+<estacion>
+   <nombre>
+   </nombre>
+   <color>
+   </color>
+   <estado>
+   </estado>
+</estacion>
+<ruta>
+   <nombre>
+   </nombre>
+   <peso>
+   </peso>
+   <inicio>
+   </inicio>
+   <fin>
+   </fin>
+</ruta>
+<estacion>
+   <estado>
+   </estado>
+   <color>
+   </color>
+   <nombre>
+   </nombre>
+</estacion>
+<ruta>
+   <nombre>
+   </nombre>
+   <peso>
+   </peso>
+   <inicio>
+   </inicio>
+   <fin>
+   </fin>
+</ruta>
+<ruta>
+   <nombre>
+   </nombre>
+   <peso>
+   </peso>
+   <inicio>
+   </inicio>
+   <fin>
+   </fin>
+</ruta>
+<ruta>
+   <nombre>
+   </nombre>
+   <peso>
+   </peso>
+   <inicio>
+   </inicio>
+   <fin>
+   </fin>
+</ruta>
+<ruta>
+   <nombre>
+   </nombre>
+   <peso>
+   </peso>
+   <inicio>
+   </inicio>
+   <fin>
+   </fin>
+</ruta>
+<ruta>
+   <nombre>
+   </nombre>
+   <peso>
+   </peso>
+   <inicio>
+   </inicio>
+   <fin>
+   </fin>
+</ruta>
+<ruta>
+   <nombre>
+   </nombre>
+   <peso>
+   </peso>
+   <inicio>
+   </inicio>
+   <fin>
+   </fin>
+</ruta>
+<estacion>
+   <color>
+   </color>
+   <nombre>
+   </nombre>
+   <estado>
+   </estado>
+</estacion>
+<nombre>
+</nombre>
