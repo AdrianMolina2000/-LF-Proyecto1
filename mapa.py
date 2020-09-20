@@ -2,7 +2,7 @@ from graphviz import Digraph
 
 def esta_abierta(lista_est, estacion):
     for i in lista_est:
-        if i.nombre == estacion:
+        if i.nombre.lower() == estacion.lower():
             if i.estado == 'cerrada':
                 return False
 
@@ -11,7 +11,7 @@ def esta_abierta(lista_est, estacion):
 def indice(lista_rut, buscar):
     iteracion = 0
     for i in lista_rut:
-        if i.nombre == buscar:
+        if i.nombre.lower() == buscar.lower():
             return iteracion
         else:
             iteracion += 1
@@ -22,7 +22,7 @@ def es_mayor(lista_rut, ruta_comparacion, lista_esta2):
     bandera = False
     for i in lista_rut:
         if esta_abierta(lista_esta2, i.fin):
-            if i.inicio == ruta_comparacion.inicio and float(ruta_comparacion.peso) > float(i.peso):
+            if i.inicio.lower() == ruta_comparacion.inicio.lower() and float(ruta_comparacion.peso) > float(i.peso):
                 return True
     return bandera
 

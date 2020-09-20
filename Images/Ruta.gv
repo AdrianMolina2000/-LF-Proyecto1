@@ -14,8 +14,6 @@ disponible"]
 	node [color=black fillcolor="#AF5B1A" fixedsize=true height=1 shape=oval style=filled width=2]
 	estacionzona4 [label="estacionzona4
 cerrada"]
-	estacionzona1 -> estacionzona6 [label="ruta_central
-2.5" style=bold]
 	estacionzona6 -> estacionzona2 [label="ruta_central2
 4" style=bold]
 	estacionzona2 -> estacionzona1 [label="rutaExpress

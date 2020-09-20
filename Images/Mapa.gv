@@ -1,21 +1,21 @@
 digraph Mapa {
 	node [color=black fillcolor="#1A5AAF" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona6 [label="estacionzona6
+	estacionzona6 [label="EstacionZona6
 disponible"]
 	node [color=black fillcolor="#AF5B1A" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona2 [label="estacionzona2
+	estacionzona2 [label="EstacionZona2
 disponible"]
 	node [color=black fillcolor="#E52E22" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona1 [label="estacionzona1
+	estacionzona1 [label="EstacionZona1
 disponible"]
 	node [color=black fillcolor="#208E40" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona5 [label="estacionzona5
+	estacionzona5 [label="EstacionZona5
 disponible"]
 	node [color=black fillcolor="#AF5B1A" fixedsize=true height=1 shape=oval style=filled width=2]
 	estacionzona4 [label="estacionzona4
 cerrada"]
 	estacionzona1 -> estacionzona6 [label="ruta_central
-2.5" style=bold]
+2.5" style=dashed]
 	estacionzona6 -> estacionzona2 [label="ruta_central2
 4" style=bold]
 	estacionzona6 -> estacionzona1 [label="ruta2
