@@ -1,15 +1,15 @@
 digraph Mapa {
 	node [color=black fillcolor="#1A5AAF" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona6 [label="EstacionZona6
+	estacionzona6 [label="estacionzona6
 disponible"]
 	node [color=black fillcolor="#AF5B1A" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona2 [label="EstacionZona2
+	estacionzona2 [label="estacionzona2
 disponible"]
 	node [color=black fillcolor="#E52E22" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona1 [label="EstacionZona1
+	estacionzona1 [label="estacionzona1
 disponible"]
 	node [color=black fillcolor="#208E40" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona5 [label="EstacionZona5
+	estacionzona5 [label="estacionzona5
 disponible"]
 	node [color=black fillcolor="#AF5B1A" fixedsize=true height=1 shape=oval style=filled width=2]
 	estacionzona4 [label="estacionzona4
@@ -28,8 +28,8 @@ cerrada"]
 1.2" style=dashed]
 	estacionzona4 -> estacionzona5 [label="ruta_4_5
 2" style=dashed]
-	"”estacionzona2" -> estacionzona5 [label="ruta_2_5
-3" style=bold]
+	estacionzona2 -> estacionzona5 [label="ruta_2_5
+3" style=dashed]
 	overlap=false
 	label=MapaCentral
 	fontsize=20

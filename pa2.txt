@@ -19,8 +19,7 @@
 
 <estacIon>
     <color>#AF5B1A</color>
-    <nombre>
-        EstacionZona2</nombre>
+    <nombre>EstacionZona2</nombre>
     <estado>disponible</estado>
 </estacion>
 

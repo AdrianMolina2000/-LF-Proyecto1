@@ -1,13 +1,14 @@
 import re, os
 from otros import *
+from analizador import analizar_archivo
 
 def carga_archivo():
     ruta = input("Ingrese la ruta del archivo: ")
     if os.path.exists(ruta): 
         if re.search("\.txt", ruta):
             print("==========================================\n\n")
-
-            lista_texto = leer_archivo(ruta)
+            analizar_archivo(ruta)
+            lista_texto = leer_archivo()
             lista_etiquetas = Agrupar(lista_texto)
             Rutas = []
             Estaciones = []

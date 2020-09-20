@@ -1,8 +1,6 @@
-import re
+import re 
+prueba= "<estado>disponible</estado>"
+pattern = r">[D|d][I|i][S|s][P|p][O|o][N|n][I|i][B|b][L|l][E|e]<"
 
-pattern = r"<[R|r][U|u][T|t][A|a]>"
-texto = "<RuTa><ruTa><Ruta><ruta><ruta>"
-
-if re.search(pattern, texto):
-    print(re.findall(pattern, texto))
-
+nombre = re.findall(pattern, prueba)
+print(nombre)

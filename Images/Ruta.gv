@@ -22,8 +22,6 @@ cerrada"]
 0.7" style=bold]
 	estacionzona1 -> estacionzona5 [label="rutaJardines
 2" style=bold]
-	"”estacionzona2" -> estacionzona5 [label="ruta_2_5
-3" style=bold]
 	overlap=false
 	label=MapaCentral
 	fontsize=20
