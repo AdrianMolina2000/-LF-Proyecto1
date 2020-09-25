@@ -1,6 +1,5 @@
 import re
-from Clases import Ruta
-from Clases import Estacion
+
 Reporte_Tokens = []
 Reporte_Tokens.append(["No.", "Lexema", "Fila", "Columna", "Token"])
 pattern_ruta_apertura = r"<[^/]*[R|r][U|u][T|t][A|a](.)*>"
@@ -193,3 +192,4 @@ def Lectura(ruta):
     for celda in Reporte_Tokens:
         print(celda)
     print("\n-----------------------------------------------------")
+
