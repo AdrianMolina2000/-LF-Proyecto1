@@ -59,7 +59,7 @@ def graficar_mapa(lista):
     t.attr(overlap='false')
     t.attr(label= nombre)
     t.attr(fontsize='20')
-
+    t.attr(rankdir="LR")
     t.view()
 
 
