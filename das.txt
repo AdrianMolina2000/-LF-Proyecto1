@@ -2,7 +2,7 @@
     <nombre>
         ruta_central
     </nombre>
-    <peso>2.5</peso>
+    <peso>2.5 </peso>
     <inicio>
         estacioNzona1
     </inicio>
@@ -10,21 +10,44 @@
         estacionZonA6
     </fin>
 </ruta>
-ds
-dsadsa
+
+<estacIon>
+    <nombre>EstacionZona6</nombre>
+    <estado>disponible</estado>
+    <color>#1A5AAF</color>
+</estacion>
+
+<estacIon>
+    <color>#AF5B1A</color>
+    <nombre>
+        EstacionZona2</nombre>
+    <estado>disponible</estado>
+</estacion>
+
+<estacIon>
+    <nombre>EstacionZona1</nombre>
+    <color>#E52E22</color>
+    <estado>disponible</estado>
+</estacion>
+
 <ruta>
     <nombre>
         ruta_central2
     </nombre>
-    <peso>4.23</peso>
+    <peso>4</peso>
     <inicio>
         estacionzona6
     </inicio>
     <fin>
         EstacionZona2
-    </fin>$
+    </fin>
 </ruta>
 
+<estacIon>
+    <estado>disponible</estado>
+    <color>#208E40</color>
+    <nombre>EstacionZona5</nombre>
+</estacion>
 
 <ruta>
     <nombre>
@@ -98,13 +121,18 @@ dsadsa
         ruta_2_5
     </nombre>
     <peso>3</peso>
-    <inicio>”
+    <inicio>
         estacionzona2
     </inicio>
     <fin>
         estacionzona5
     </fin>
 </ruta>
-@
 
+<estacIon>
+    <color>#AF5B1A</color>
+    <nombre>estacionzona4</nombre>
+    <estado>cerrada</estado>
+</estacion>
 
+<nombre>Mapa Central</nombre>

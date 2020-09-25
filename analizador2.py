@@ -28,8 +28,22 @@ def analizar_archivo(path):
                 elif estado == "<":
                     if letra == " ":
                         continue
+                    #RUTA
                     elif letra == "R" or letra == "r":
                         estado = "<r"
+                    
+                    #ESTACION
+                    elif letra == "e" or letra == "E":
+                        estado = "<e"
+                    
+                    #NOMBRE MAPA
+                    elif letra == "n" or letra == "N":
+                        estado = "<n"
+                    
+                    else:
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+
+                #RUTA
                 elif estado == "<r":
                     if letra == "u" or letra == "U":
                         estado = "<ru"
@@ -97,6 +111,8 @@ def analizar_archivo(path):
 
                     else:
                         print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                            
+                
                 elif estado == "r<n":
                     if letra == "o" or letra == "O":
                         estado = "r<no"
@@ -150,13 +166,23 @@ def analizar_archivo(path):
                     if re.search(pattern_nombre, letra) :
                         continue
                     elif letra == " ":
-                        continue
+                        estado = "fin_ruta_nombre"
                     elif letra == "\n":
                         continue
                     elif letra == "<":
                         estado = "ruta_nombreCierre"
                     else: 
                         print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "fin_ruta_nombre":
+                    if letra == "<":
+                        estado = "ruta_nombreCierre"
+                    elif letra == "\n":
+                        continue
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+
                 elif estado == "ruta_nombreCierre":
                     if letra == "/" :
                         estado = "ruta_nombreCierre/"
@@ -257,13 +283,23 @@ def analizar_archivo(path):
                     if re.search(r"[0-9]", letra) :
                         estado = "peso_post"
                     elif letra == " " :
-                        continue
+                        estado = "fin_peso"
                     elif letra == "\n":
                         continue
                     elif letra == "<":
                         estado = "Peso_Cierre"
                     else: 
                         print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+
+                elif estado == "fin_peso":
+                    if letra == "<":
+                        estado = "Peso_Cierre"
+                    elif letra == "\n":
+                        continue
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")    
                 elif estado == "Peso_Cierre":
                     if letra == "/" :
                         estado = "Peso_Cierre/"
@@ -353,11 +389,20 @@ def analizar_archivo(path):
                     if re.search(pattern_nombre, letra) :
                         continue
                     elif letra == " ":
-                        continue
+                        estado = "fin_inicio"
                     elif letra == "\n":
                         continue
                     elif letra == "<":
                         estado = "ruta_InicioCierre"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "fin_inicio":
+                    if letra == "<":
+                        estado = "ruta_InicioCierre"
+                    elif letra == "\n":
+                        continue
+                    elif letra == " ":
+                        continue
                     else: 
                         print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
                 elif estado == "ruta_InicioCierre":
@@ -446,11 +491,20 @@ def analizar_archivo(path):
                     if re.search(pattern_nombre, letra) :
                         continue
                     elif letra == " ":
-                        continue
+                        estado = "fin_ruta_fin"
                     elif letra == "\n":
                         continue
                     elif letra == "<":
                         estado = "ruta_FinCierre"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "fin_ruta_fin":
+                    if letra == "<":
+                        estado = "ruta_FinCierre"
+                    elif letra == "\n":
+                        continue
+                    elif letra == " ":
+                        continue
                     else: 
                         print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
                 elif estado == "ruta_FinCierre":
@@ -513,6 +567,592 @@ def analizar_archivo(path):
                         continue
                     else: 
                         print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+
+
+                #Estacion
+                elif estado == "<e":
+                    if letra == "s" or letra == "S":
+                        estado = "<es"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                
+                elif estado == "<es":
+                    if letra == "T" or letra == "t":
+                        estado = "<est"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "<est":
+                    if letra == "a" or letra == "A":
+                        estado = "<esta"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "<esta":
+                    if letra == "c" or letra == "C":
+                        estado = "<estac"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "<estac":
+                    if letra == "i" or letra == "I":
+                        estado = "<estaci"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "<estaci":
+                    if letra == "o" or letra == "O":
+                        estado = "<estacio"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "<estacio":
+                    if letra == "n" or letra == "N":
+                        estado = "<estacion"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+
+                elif estado == "<estacion":
+                    if letra == ">":
+                        estado = "<estacion>"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "<estacion>":
+                    if letra == "\n":
+                        estado = "estacion_apertura"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                
+                elif estado == "estacion_apertura":
+                    if letra == "<":
+                        estado = "e<"
+                    elif letra == " ":
+                        continue
+                    elif letra == "\n":
+                        continue
+                    else:
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                
+                elif estado == "e<":
+                    #nombre
+                    if letra == "n" or letra == "N":
+                        estado = "e<n"
+
+                    #estado
+                    elif letra == "e" or letra == "E":
+                        estado = "e<e"
+
+                    #color
+                    elif letra == "c" or letra == "C":
+                        estado = "e<c"
+                    
+                    #estacionCierre
+                    elif letra == "/":
+                        estado = "es</"
+                    
+                    elif letra == "\n":
+                        continue
+
+                    else:
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+
+                #Estacion
+                elif estado == "e<n":
+                    if letra == "o" or letra == "O":
+                        estado = "e<no"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<no":
+                    if letra == "m" or letra == "M":
+                        estado = "e<nom"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<nom":
+                    if letra == "b" or letra == "B":
+                        estado = "e<nomb"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<nomb":
+                    if letra == "r" or letra == "R":
+                        estado = "e<nombr"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<nombr":
+                    if letra == "e" or letra == "E":
+                        estado = "e<nombre"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<nombre":
+                    if letra == ">":
+                        estado = "e<nombre>"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<nombre>":
+                    if letra == "\n":
+                        estado = "e_nombre_primera_letra"
+                    elif re.search(pattern_primera_Letra, letra):
+                        estado = "estacion_nombre"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e_nombre_primera_letra":
+                    if letra == " ":
+                        continue
+                    elif re.search(pattern_primera_Letra, letra):
+                        estado = "estacion_nombre"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                
+                elif estado == "estacion_nombre":
+                    if re.search(pattern_nombre, letra) :
+                        continue
+                    elif letra == " ":
+                        estado = "fin_estacion_nombre"
+                    elif letra == "\n":
+                        continue
+                    elif letra == "<":
+                        estado = "estacion_nombreCierre"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "fin_estacion_nombre":
+                    if letra == "<":
+                        estado = "estacion_nombreCierre"
+                    elif letra == "\n":
+                        continue
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "estacion_nombreCierre":
+                    if letra == "/" :
+                        estado = "estacion_nombreCierre/"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "estacion_nombreCierre/":
+                    if letra == "n" or letra =="N" :
+                        estado = "e</n"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</n":
+                    if letra == "o" or letra == "O" :
+                        estado = "e</no"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</no":
+                    if letra == "m" or letra == "M" :
+                        estado = "e</nom"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</nom":
+                    if letra == "b" or letra == "B" :
+                        estado = "e</nomb"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</nomb":
+                    if letra == "r" or letra == "R" :
+                        estado = "e</nombr"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</nombr":
+                    if letra == "E" or letra == "e" :
+                        estado = "e</nombre"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</nombre":
+                    if letra == ">" :
+                        estado = "estacion_apertura"
+                    elif letra == " ":
+                        continue
+                    
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                
+            
+                #ESTADO
+                elif estado == "e<e":
+                    if letra == "s" or letra == "S":
+                        estado = "e<es"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<es":
+                    if letra == "t" or letra == "T":
+                        estado = "e<est"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<est":
+                    if letra == "a" or letra == "A":
+                        estado = "e<esta"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<esta":
+                    if letra == "d" or letra == "D":
+                        estado = "e<estad"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<estad":
+                    if letra == "o" or letra == "O":
+                        estado = "e<estado"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<estado":
+                    if letra == ">":
+                        estado = "e<estado>"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<estado>":
+                    if letra == "\n":
+                        estado = "e_estado_primera_letra"
+                    elif re.search(pattern_primera_Letra, letra):
+                        estado = "estacion_estado"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e_estado_primera_letra":
+                    if letra == " ":
+                        continue
+                    elif re.search(pattern_primera_Letra, letra):
+                        estado = "estacion_estado"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                
+                elif estado == "estacion_estado":
+                    if re.search(pattern_nombre, letra) :
+                        continue
+                    elif letra == " ":
+                        estado = "estado_fin"
+                    elif letra == "\n":
+                        continue
+                    elif letra == "<":
+                        estado = "estacion_EstadoCierre"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "estado_fin":
+                    if letra == "<":
+                        estado = "estacion_EstadoCierre"
+                    elif letra == "\n":
+                        continue
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "estacion_EstadoCierre":
+                    if letra == "/" :
+                        estado = "estacion_EstadoCierre/"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "estacion_EstadoCierre/":
+                    if letra == "e" or letra =="E" :
+                        estado = "e</e"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</e":
+                    if letra == "s" or letra == "S" :
+                        estado = "e</es"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</es":
+                    if letra == "t" or letra == "T" :
+                        estado = "e</est"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</est":
+                    if letra == "a" or letra == "A" :
+                        estado = "e</esta"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</esta":
+                    if letra == "d" or letra == "D" :
+                        estado = "e</estad"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</estad":
+                    if letra == "o" or letra == "O" :
+                        estado = "e</estado"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</estado":
+                    if letra == ">" :
+                        estado = "estacion_apertura"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                
+                #Color
+                elif estado == "e<c":
+                    if letra == "o" or letra == "O":
+                        estado = "e<co"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<co":
+                    if letra == "l" or letra == "L":
+                        estado = "e<col"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<col":
+                    if letra == "o" or letra == "O":
+                        estado = "e<colo"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<colo":
+                    if letra == "r" or letra == "R":
+                        estado = "e<color"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+
+                elif estado == "e<color":
+                    if letra == ">":
+                        estado = "e<color>"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e<color>":
+                    if letra == "\n":
+                        estado = "e_color_primera_letra"
+                    elif letra == "#":
+                        estado = "estacion_color"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e_color_primera_letra":
+                    if letra == " ":
+                        continue
+                    elif letra == "#":
+                        estado = "estacion_color"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                
+                elif estado == "estacion_color":
+                    if re.search(r"[A-Za-z0-9]", letra) :
+                        continue
+                    elif letra == " ":
+                        estado = "fin_color"
+                    elif letra == "\n":
+                        continue
+                    elif letra == "<":
+                        estado = "estacion_ColorCierre"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "fin_color":
+                    if letra == "<":
+                        estado = "estacion_ColorCierre"
+                    elif letra == "\n":
+                        continue
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "estacion_ColorCierre":
+                    if letra == "/" :
+                        estado = "estacion_ColorCierre/"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "estacion_ColorCierre/":
+                    if letra == "c" or letra =="C" :
+                        estado = "e</c"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</c":
+                    if letra == "o" or letra == "O" :
+                        estado = "e</co"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</co":
+                    if letra == "l" or letra == "L" :
+                        estado = "e</col"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</col":
+                    if letra == "o" or letra == "O" :
+                        estado = "e</colo"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</colo":
+                    if letra == "r" or letra == "R" :
+                        estado = "e</color"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "e</color":
+                    if letra == ">" :
+                        estado = "estacion_apertura"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+            
+                #EstacionCierre
+                elif estado == "es</":
+                    if letra == "e" or letra =="E" :
+                        estado = "es</e"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "es</e":
+                    if letra == "s" or letra == "S" :
+                        estado = "es</es"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "es</es":
+                    if letra == "t" or letra == "T" :
+                        estado = "es</est"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "es</est":
+                    if letra == "a" or letra == "A" :
+                        estado = "es</esta"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "es</esta":
+                    if letra == "c" or letra == "C" :
+                        estado = "es</estac"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "es</estac":
+                    if letra == "i" or letra == "I" :
+                        estado = "es</estaci"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "es</estaci":
+                    if letra == "o" or letra == "O" :
+                        estado = "es</estacio"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "es</estacio":
+                    if letra == "n" or letra == "N" :
+                        estado = "es</estacion"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                
+                elif estado == "es</estacion":
+                    if letra == ">" :
+                        estado = "nada"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                
+
+                #Nombre Mapa
+                elif estado == "<n":
+                    if letra == "o" or letra == "O":
+                        estado = "<no"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                
+                elif estado == "<no":
+                    if letra == "m" or letra == "M":
+                        estado = "<nom"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "<nom":
+                    if letra == "b" or letra == "B":
+                        estado = "<nomb"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "<nomb":
+                    if letra == "r" or letra == "R":
+                        estado = "<nombr"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "<nombr":
+                    if letra == "e" or letra == "e":
+                        estado = "<nombre"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+
+                elif estado == "<nombre":
+                    if letra == ">":
+                        estado = "<nombre>"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "<nombre>":
+                    if letra == "\n":
+                        estado = "nombre_primera_letra"
+                    elif re.search(pattern_primera_Letra, letra):
+                        estado = "nombre_primera_letra"    
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                
+                elif estado == "nombre_primera_letra":
+                    if letra == " ":
+                        continue
+                    elif re.search(pattern_primera_Letra, letra):
+                        estado = "nombre"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                
+                elif estado == "nombre":
+                    if re.search(pattern_nombre, letra) :
+                        continue
+                    elif letra == " ":
+                        continue
+                    elif letra == "\n":
+                        continue
+                    elif letra == "<":
+                        estado = "nombreCierre"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "nombreCierre":
+                    if letra == "/" :
+                        estado = "nombreCierre/"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "nombreCierre/":
+                    if letra == "n" or letra =="N" :
+                        estado = "</n"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "</n":
+                    if letra == "o" or letra == "O" :
+                        estado = "</no"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "</no":
+                    if letra == "m" or letra == "M" :
+                        estado = "</nom"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "</nom":
+                    if letra == "b" or letra == "B" :
+                        estado = "</nomb"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "</nomb":
+                    if letra == "r" or letra == "R" :
+                        estado = "</nombr"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "</nombr":
+                    if letra == "E" or letra == "e" :
+                        estado = "</nombre"
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+                elif estado == "</nombre":
+                    if letra == ">" :
+                        estado = "nada"
+                    elif letra == " ":
+                        continue
+                    else: 
+                        print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
+
             n_linea += 1
                 
                 
