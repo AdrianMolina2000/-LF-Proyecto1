@@ -1,6 +1,8 @@
 import re, os
 from otros import *
 from analizador import analizar_archivo
+from tokens import analizar_archivo_tokens
+from Errores import analizar_archivo_error
 
 def carga_archivo():
     ruta = input("Ingrese la ruta del archivo: ")
@@ -8,6 +10,8 @@ def carga_archivo():
         if re.search("\.txt", ruta):
             print("==========================================\n\n")
             analizar_archivo(ruta)
+            analizar_archivo_tokens(ruta)
+            analizar_archivo_error(ruta)
             lista_texto = leer_archivo()
             lista_etiquetas = Agrupar(lista_texto)
             Rutas = []

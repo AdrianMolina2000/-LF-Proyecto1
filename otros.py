@@ -116,34 +116,6 @@ def Limpiar_Nombre(nombre_entrada):
 
     return nombre
 
-
-
-
-
-
-lista_texto = leer_archivo()
-lista_etiquetas = Agrupar(lista_texto)
-Rutas = []
-Estaciones = []
-
-#Rutas
-            
-for i in lista_etiquetas[0]:
-    Rutas.append(Limpiar_Ruta(i))
-#Estaciones
-for i in lista_etiquetas[1]:
-    Estaciones.append(Limpiar_Estacion(i))
-#Nombre
-nombre = Limpiar_Nombre(lista_etiquetas[2][0])
-            
-lista_limpia = [Rutas, Estaciones, nombre]
-
-for i in lista_limpia[1]:
-    print("----------------")
-    print(i.nombre)
-    print(i.estado)
-    print(i.color)
-    print("----------------")
 """ 
     pattern_extra = r">(\$|@|”|"|'|[A-Za-z0-9]|\?|!|)*<"
     pattern_Ruta = r"(<ruta>).*(</ruta>)"

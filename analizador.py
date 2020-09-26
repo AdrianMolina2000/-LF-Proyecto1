@@ -141,8 +141,8 @@ def analizar_archivo(path):
                             peso1 = re.findall(pattern_ruta_peso_contenido_entre,i)[0]
                             peso1 = peso1.replace("<","")
                             peso1 = peso1.replace(">","")
-
-                        file_name.write(r"       "+peso1+"\n")
+                            file_name.write(r"       "+peso1+"\n")
+                        
                         file_name.write("   </peso>\n")
                     else:
                         estado = "ruta_peso_apertura"
