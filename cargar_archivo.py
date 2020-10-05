@@ -9,10 +9,9 @@ def carga_archivo():
     if os.path.exists(ruta): 
         if re.search("\.txt", ruta):
             print("==========================================\n\n")
-            analizar_archivo(ruta)
             analizar_archivo_tokens(ruta)
             analizar_archivo_error(ruta)
-            lista_texto = leer_archivo()
+            lista_texto = leer_archivo(ruta)
             lista_etiquetas = Agrupar(lista_texto)
             Rutas = []
             Estaciones = []

@@ -1,13 +1,13 @@
 digraph Ruta2 {
 	node [color=black fillcolor=gray fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona6 -> estacionzona2 [label="ruta_central2
-4" style=bold]
-	estacionzona2 -> estacionzona1 [label="rutaExpress
-0.7" style=bold]
-	estacionzona1 -> estacionzona5 [label="rutaJardines
+	fuego -> hierba [label="rutaX1
+1.0" style=bold]
+	hierba -> fuego [label="rutaX2
+6" style=bold]
+	agua -> fuego [label="rutaY2
 2" style=bold]
 	overlap=false
-	label=MapaCentral
+	label=TR1F0RC3
 	fontsize=20
 	rankdir=LR
 }

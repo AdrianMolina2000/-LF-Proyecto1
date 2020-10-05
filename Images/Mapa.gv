@@ -1,37 +1,33 @@
 digraph Mapa {
-	node [color=black fillcolor="#1A5AAF" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona6 [label="EstacionZona6
+	node [color=black fillcolor="#f5f5f5" fixedsize=true height=1 shape=oval style=filled width=2]
+	fuego [label="FUEGO
 disponible"]
-	node [color=black fillcolor="#AF5B1A" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona2 [label="EstacionZona2
+	node [color=black fillcolor="#dae8fc" fixedsize=true height=1 shape=oval style=filled width=2]
+	agua [label="AGUA
+disponible%"]
+	node [color=black fillcolor="#dae8fc" fixedsize=true height=1 shape=oval style=filled width=2]
+	hierba [label="HIERBA
 disponible"]
-	node [color=black fillcolor="#E52E22" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona1 [label="EstacionZona1
-disponible"]
-	node [color=black fillcolor="#208E40" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona5 [label="EstacionZona5
-disponible"]
-	node [color=black fillcolor="#AF5B1A" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacionzona4 [label="estacionzona4
+	node [color=black fillcolor="#dae8fc" fixedsize=true height=1 shape=oval style=filled width=2]
+	estacion_x2 [label="estacion_X2
 cerrada"]
-	estacionzona1 -> estacionzona6 [label="ruta_central
-2.5" style=dashed]
-	estacionzona6 -> estacionzona2 [label="ruta_central2
-4" style=bold]
-	estacionzona6 -> estacionzona1 [label="ruta2
-5" style=dashed]
-	estacionzona2 -> estacionzona1 [label="rutaExpress
-0.7" style=bold]
-	estacionzona1 -> estacionzona5 [label="rutaJardines
+	node [color=black fillcolor="#dae8fc" fixedsize=true height=1 shape=oval style=filled width=2]
+	estacion_x [label="estacion_X
+disponible"]
+	fuego -> hierba [label="rutaX1
+1.0" style=bold]
+	hierba -> fuego [label="rutaX2
+6" style=bold]
+	hierba -> agua [label="rutaZ2
+6.21" style=dashed]
+	agua -> hierba [label="rutaZ1
+8" style=dashed]
+	agua -> fuego [label="rutaY2
 2" style=bold]
-	estacionzona6 -> estacionzona4 [label="ruta4
-1.2" style=dashed]
-	estacionzona4 -> estacionzona5 [label="ruta_4_5
-2" style=dashed]
-	estacionzona2 -> estacionzona5 [label="ruta_2_5
-3" style=dashed]
+	fuego -> agua [label="rutaY1
+8" style=dashed]
 	overlap=false
-	label=MapaCentral
+	label=TR1F0RC3
 	fontsize=20
 	rankdir=LR
 }
