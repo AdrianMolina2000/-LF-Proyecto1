@@ -55,12 +55,11 @@ def menu_principal():
     
 if __name__ == "__main__":
     datos_del_estudiante()
-    menu_principal()
-    # try:
-    #     menu_principal()
-    # except Exception as e:
-    #     print("\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
-    #     print("///// Error -> Error -> Error ->  Error /////") 
-    #     print(e)
-    #     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n")
-    #     menu_principal()
+    try:
+        menu_principal()
+    except Exception as e:
+        print("\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+        print("///// Error -> Error -> Error ->  Error /////") 
+        print(e)
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n")
+        menu_principal()

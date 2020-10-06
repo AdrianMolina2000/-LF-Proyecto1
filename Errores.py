@@ -1381,8 +1381,6 @@ def analizar_archivo_error(path):
     file_name.write("       </tbody>\n")
     file_name.write("   </table>\n")
     file_name.write("</body>\n</html>\n")
-    # os.startfile("Reporte\index.html")
+    os.startfile("Reporte\index.html")
     file_name.close()
                 
-
-analizar_archivo_error("input2.txt")

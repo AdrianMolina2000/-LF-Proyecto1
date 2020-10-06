@@ -1,27 +1,24 @@
 digraph Ruta {
+	node [color=black fillcolor="#dae8fc" fixedsize=true height=1 shape=oval style=filled width=2]
+	estnorte [label="estNorte
+disponible"]
 	node [color=black fillcolor="#f5f5f5" fixedsize=true height=1 shape=oval style=filled width=2]
-	fuego [label="FUEGO
+	estoeste [label="estOeste
 disponible"]
 	node [color=black fillcolor="#dae8fc" fixedsize=true height=1 shape=oval style=filled width=2]
-	agua [label="AGUA
-disponible%"]
-	node [color=black fillcolor="#dae8fc" fixedsize=true height=1 shape=oval style=filled width=2]
-	hierba [label="HIERBA
+	est_este [label="EST_ESTE
 disponible"]
-	node [color=black fillcolor="#dae8fc" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacion_x2 [label="estacion_X2
-cerrada"]
-	node [color=black fillcolor="#dae8fc" fixedsize=true height=1 shape=oval style=filled width=2]
-	estacion_x [label="estacion_X
+	node [color=black fillcolor="#d5e8d4" fixedsize=true height=1 shape=oval style=filled width=2]
+	sur [label="SUR
 disponible"]
-	fuego -> hierba [label="rutaX1
-1.0" style=bold]
-	hierba -> fuego [label="rutaX2
-6" style=bold]
-	agua -> fuego [label="rutaY2
-2" style=bold]
+	est_este -> estoeste [label="ruta_central1
+2.5" style=bold]
+	estoeste -> est_este [label="ruta_central2
+1.5" style=bold]
+	estnorte -> est_este [label="RUTA_NE
+5.00001" style=bold]
 	overlap=false
-	label=TR1F0RC3
+	label=Ciudad_Guatemala
 	fontsize=20
 	rankdir=LR
 }

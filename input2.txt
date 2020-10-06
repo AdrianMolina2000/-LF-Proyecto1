@@ -57,10 +57,7 @@ estacion>
 <ruta>
     <nombre>rutaY2</nombre>
 
-    <inicio>AgUA</inicio>
-
-    <fin>fuego</fin>
-    <peso>2</peso>
+    <inicio>AgUA</inicio><fin>fuego</fin><peso>2</peso>
 
 
 </ruta>

@@ -43,7 +43,7 @@ def report(tokis):
     file_name.write("</body>\n</html>\n")
 
     file_name.close()
-    # os.startfile("Reporte\index_2.html")
+    os.startfile("Reporte\index_2.html")
 
 #PATRONES
 ruta_abierta = r"[<][^/]*[r|R][u|U][t|T][a|A][.|^<]*[>]"
@@ -152,3 +152,5 @@ def analizar_archivo_tokens(path):
             
             n_linea += 1
     report(tokens)
+
+# analizar_archivo_tokens("input1.txt")

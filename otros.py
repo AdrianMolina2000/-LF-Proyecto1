@@ -157,7 +157,7 @@ def Limpiar_Nombre(nombre_entrada):
     return nombre
 
 
-print(Agrupar(leer_archivo("input2.txt"))[0])
+# print(Agrupar(leer_archivo("input2.txt"))[0])
 # lista_texto = leer_archivo("input1.txt")
 # lista_etiquetas = Agrupar(lista_texto)
 # Rutas = []
