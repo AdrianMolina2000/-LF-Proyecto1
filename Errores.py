@@ -101,7 +101,9 @@ def analizar_archivo_error(path):
                     if letra == "\n":
                         estado = "ruta_apertura"
                     elif letra == " ":
-                        continue
+                        estado = "ruta_apertura"
+                    elif letra == "<":
+                        estado = "r<"
                     else: 
                         print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
                         html(n_linea, n_letra, letra)
@@ -726,7 +728,11 @@ def analizar_archivo_error(path):
                 elif estado == "<estacion":
                     if letra == ">":
                         estado = "<estacion>"
+                    elif letra == "<":
+                        estado = "e<"
                     elif letra == " ":
+                        continue
+                    elif letra == "\n":
                         continue
                     else: 
                         print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
@@ -951,6 +957,8 @@ def analizar_archivo_error(path):
                         estado = "e<estado>"
                     elif letra == " ":
                         continue
+                    elif letra == "\n":
+                        continue
                     else: 
                         print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
                         html(n_linea, n_letra, letra)
@@ -1000,12 +1008,18 @@ def analizar_archivo_error(path):
                         estado = "estacion_EstadoCierre/"
                     elif letra == " ":
                         continue
+                    elif letra == "\n":
+                        continue
                     else: 
                         print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
                         html(n_linea, n_letra, letra)
                 elif estado == "estacion_EstadoCierre/":
                     if letra == "e" or letra =="E" :
                         estado = "e</e"
+                    elif letra == " ":
+                        continue
+                    elif letra == "\n":
+                        continue
                     else: 
                         print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
                         html(n_linea, n_letra, letra)
@@ -1168,6 +1182,8 @@ def analizar_archivo_error(path):
                         estado = "estacion_apertura"
                     elif letra == " ":
                         continue
+                    elif letra == "\n":
+                        continue
                     else: 
                         print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
                         html(n_linea, n_letra, letra)
@@ -1176,6 +1192,10 @@ def analizar_archivo_error(path):
                 elif estado == "es</":
                     if letra == "e" or letra =="E" :
                         estado = "es</e"
+                    elif letra == " ":
+                        continue
+                    elif letra == "\n":
+                        continue
                     else: 
                         print(f"||linea: {n_linea}||columna {n_letra}||valor: {letra}||")
                         html(n_linea, n_letra, letra)
@@ -1365,3 +1385,4 @@ def analizar_archivo_error(path):
     file_name.close()
                 
 
+analizar_archivo_error("input2.txt")

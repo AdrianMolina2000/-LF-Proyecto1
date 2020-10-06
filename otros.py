@@ -173,14 +173,6 @@ print(Agrupar(leer_archivo("input2.txt"))[0])
 
 
 """ 
-    pattern_extra = r">(\$|@|”|"|'|[A-Za-z0-9]|\?|!|)*<"
-    pattern_Ruta = r"(<ruta>).*(</ruta>)"
-    pattern_Ruta_nombre = r"<nombre>.*</nombre>"
-    pattern_Ruta_peso = r"<peso>.*</peso>"
-    pattern_Ruta_inicio = r"<inicio>.*</inicio>"
-    pattern_Ruta_fin = r"<fin>.*</fin>"
-    pattern_nombre = r"[a-zA-Z]+([a-zA-Z]|[0-9]|[_]|[@]|[#])*"
-    pattern_peso = r"[0-9]+(\.[0-9][0-9]*)?"
-    pattern_inicio_fin = r"[a-zA-Z]+([a-zA-Z]|[0-9]|[_])*"
+ 
 "<estacion><estado>disponible</estado><color>#f5f5f5</color><nombre>FUEGO</nombre></estacion>"
 """
